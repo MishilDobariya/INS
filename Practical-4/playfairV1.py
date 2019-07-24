@@ -3,6 +3,10 @@ pt = input("Enter Plain Text:")
 key = key.replace("j","i") 
 lenpt = len(pt)
 
+opt = pt
+if (lenpt % 2) != 0:
+    pt = pt + "x"
+
 ptGroup = []
 j=0
 k=2
@@ -137,5 +141,7 @@ for i in range(len(enGroup)):
     k1,k2 = findCharD(x,xi,y,yi)
     decry = decry + k1 + k2
 
+if len(opt)!=len(pt):
+    decry = decry[:-1]
 print("Encrypted Text:" + encry)
 print("Decrypted Text:" + decry)
